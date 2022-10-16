@@ -55,7 +55,7 @@ ROOT_URLCONF = 'langler.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': ['userlogin', 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
