@@ -1,9 +1,11 @@
+import re
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import path
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
 
@@ -29,7 +31,7 @@ def registerPage(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for' + user)
+            messages.success(request, 'Account was created for ' + user)
             return redirect('login')
     context = {'form':form}
     return render(request, 'userlogin/register.html', context)
@@ -43,7 +45,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('loggedin')
         else:
             messages.info(request, 'Username OR Password is incorrect')
 
@@ -53,3 +55,18 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+@login_required(login_url='/login/')
+def loggedinUser(request):
+    if request.method == 'POST':
+        return redirect('main')
+
+    return render(request, 'userlogin/loggeduserhome.html')
+
+@login_required(login_url='/login/')
+def mainPageLoggedin(request):
+    return render(request, 'userlogin/mainloggedin.html')
+
+@login_required(login_url='/login/')
+def randomPerson(request):
+    return render(request, 'userlogin/randomperson.html')

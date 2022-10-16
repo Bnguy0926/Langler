@@ -8,30 +8,25 @@ h1 {
 }
 
 .container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color:#EDEDED;
-    background-position: center;
-    background-size: cover;
-    padding-left: 0%;
-    padding-right: 0%;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.center{
-    margin: 0;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+.nav-margin{
+    margin-top:80px;
 }
+
 .centerButton{
-    margin: 0;
-    position: absolute;
-    top: 56%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+#welcome{
+    height: 200px;
 }

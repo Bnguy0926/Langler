@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.http import HttpRequest, HttpResponse
 from django.urls import include, path
 
@@ -10,6 +11,9 @@ urlpatterns = [
     path('customer/', views.customer),
     # path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.registerPage, name="register"),
-    path('login', views.loginPage, name="login"),
-    path('logout', views.loginPage, name="logout"),
+    path('login/', views.loginPage, name="login"),
+    path('logout/', views.loginPage, name="logout"),
+    path('addinfo/', views.loggedinUser, name="loggedin"),
+    path('main/', views.mainPageLoggedin, name="main"),
+    path('main/view/', views.randomPerson, name="random")
 ]
