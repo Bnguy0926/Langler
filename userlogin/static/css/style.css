@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: blueviolet;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color:#EDEDED;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-margin{
+    margin-top:80px;
+}
+
+.centerButton{
+    display: flex;
+    justify-content: center;
+}
+
+#welcome{
+    height: 200px;
+}

@@ -1,0 +1,33 @@
+{% extends 'userlogin/main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langler</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body style="background-color: #EDEDED">
+    <div class="container">
+        <div class="nav-margin">
+            <div class="center">
+                <img src="./static/images/welcome.png" alt="logo" id="welcome"><br>
+
+            </div>
+            <div class="centerButton">
+                <!--button directs to google for now-->
+                <a href="{% url 'register' %}">
+                    <img src = "./static/images/buttonStart.png" alt="button" height=100 width=180>
+                </a>
+            </div>
+        </div>
+    </div> 
+</body>
+
+
+</html>
+
+{% endblock content%}

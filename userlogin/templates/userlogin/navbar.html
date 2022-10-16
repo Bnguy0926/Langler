@@ -1,0 +1,26 @@
+<style>
+    .logo-position{
+        position: absolute;
+        background-color: #27251F;
+        border-radius: 50%;
+        width:75px;
+        height:75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        margin:25px;
+        transition:0.5s box-shadow;
+    }
+    .logo-position:hover{
+        box-shadow: 0 4px 8px 0 rgba(255, 179, 10, 0.4), 0 6px 10px 0 rgba(255, 179, 10, 0.2);
+    }
+    .logo-position img {
+        width:75px;
+    }
+</style>
+<a href="{% url 'home' %}">
+<div class="logo-position">
+        <img src="/static/images/logo.png" alt="haha">
+</div>
+</a>
