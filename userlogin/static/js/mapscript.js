@@ -1,3 +1,4 @@
+console.log('Hello')
 x = navigator.geolocation;
 
 x.getCurrentPosition(success, failure);

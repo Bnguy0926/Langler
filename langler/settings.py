@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'userlogin'
+    'users.app.UserConfig',
+    'userlogin',
 ]
 
 MIDDLEWARE = [
@@ -117,12 +118,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 STATIC_URL = '/static/'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+GOOGLE_API_KEY = "AIzaSyBFK29KB8lqn_iYTnT9YmU6Jb-liNMezWE"
+RECAPTCHA_KEY = "6LeQMIUiAAAAAKhZz_UP76TZKDf2GWsvRdnjseWw"
+RECAPTCHA_SECERET_KEY = "6LeQMIUiAAAAAPtEiY5fa0COkLmA2gzVesf3REv3" 
