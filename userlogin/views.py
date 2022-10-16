@@ -6,6 +6,9 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'userlogin/dashboard.html')
 
+def map(request):
+    return render(request, 'userlogin/map.html')
+
 def about(request):
     return HttpResponse('About')
 
