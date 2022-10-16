@@ -1,3 +1,4 @@
+from multiprocessing.heap import Arena
 from django.db import models
 
 # Create your models here.
@@ -32,3 +33,10 @@ class Message(models.Model):
     interactionid = models.ForeignKey(Interaction, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(default=timezone.now)
     content = models.TextField()
+
+class Address(models.Model):
+    userid = models.ForeignKey(User, on_delete=models.CASCADE)
+    steet = models.CharField(max_length=200)
+    city = models.CharField(max_length=100)
+    area = models.CharField(max_length=100)
+    Country = models.CharField(max_length=100)
